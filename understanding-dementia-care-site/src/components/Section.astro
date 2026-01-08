@@ -1,0 +1,15 @@
+---
+export interface Props {
+  dark?: boolean;
+  className?: string;
+}
+
+const { dark = false, className = '' } = Astro.props;
+---
+
+<section class={`py-24 ${dark ? 'bg-stone-100' : 'bg-white'} ${className}`}>
+  <div class="container mx-auto px-6 max-w-6xl">
+    <slot />
+  </div>
+</section>
+

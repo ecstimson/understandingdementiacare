@@ -1,0 +1,74 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="text-white pt-24 pb-12" style="background-color: #293D3B;">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <!-- Column 1: About -->
+      <div>
+        <h3 class="font-serif text-2xl mb-6">Mary Donnelly</h3>
+        <p class="text-stone-400 font-light leading-relaxed">
+          Nationally recognized dementia consultant and educator based in Asheville, NC.
+        </p>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest mb-6">Quick Links</h4>
+        <ul class="space-y-3 font-light">
+          <li><a href="/about" class="text-stone-400 hover:text-white transition-colors">About</a></li>
+          <li><a href="/consulting" class="text-stone-400 hover:text-white transition-colors">Consulting</a></li>
+          <li><a href="/speaking" class="text-stone-400 hover:text-white transition-colors">Speaking</a></li>
+          <li><a href="/book" class="text-stone-400 hover:text-white transition-colors">Book</a></li>
+          <li><a href="/testimonials" class="text-stone-400 hover:text-white transition-colors">Testimonials</a></li>
+          <li><a href="/contact" class="text-stone-400 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Contact -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest mb-6">Connect</h4>
+        <ul class="space-y-3 font-light">
+          <li>
+            <a href="mailto:mary@understandingdementiacare.com" class="text-stone-400 hover:text-white transition-colors">
+              mary@understandingdementiacare.com
+            </a>
+          </li>
+          <li class="text-stone-400">Asheville, North Carolina</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">
+      <p>© {currentYear} Mary Donnelly. All rights reserved.</p>
+      <p class="mt-4 md:mt-0">
+        Website by <a href="#" class="hover:text-white transition-colors">Your Agency</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Organization Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mary Donnelly Dementia Consulting",
+  "url": "https://understandingdementiacare.com",
+  "logo": "https://understandingdementiacare.com/logo.png",
+  "description": "Nationally recognized dementia consultant and educator helping families and professionals navigate dementia care.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Asheville",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "email": "mary@understandingdementiacare.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/marydonnelly"
+  ]
+}
+</script>
+

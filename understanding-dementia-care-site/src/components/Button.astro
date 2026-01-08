@@ -1,0 +1,36 @@
+---
+export interface Props {
+  href?: string;
+  variant?: 'primary' | 'outline' | 'text';
+  className?: string;
+  type?: 'button' | 'submit';
+}
+
+const {
+  href,
+  variant = 'primary',
+  className = '',
+  type = 'button',
+} = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center px-8 py-3 transition-all duration-300 text-sm tracking-widest uppercase font-medium focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2';
+
+const variantClasses = {
+  primary: 'bg-brand text-white hover:bg-brand/90 hover:shadow-lg hover:-translate-y-0.5',
+  outline: 'border border-brand text-brand hover:bg-brand hover:text-white',
+  text: 'text-brand hover:text-brand/80 p-0 hover:translate-x-1',
+};
+
+const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={combinedClasses}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={combinedClasses}>
+    <slot />
+  </button>
+)}
+

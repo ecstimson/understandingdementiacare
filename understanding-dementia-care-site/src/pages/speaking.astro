@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import ContactForm from '../components/ContactForm';
+---
+
+<BaseLayout 
+  title="Speaking & Education | Mary Donnelly Dementia Consultant"
+  description="Book Mary Donnelly for keynote speeches, workshops, and training programs on dementia care. Engaging presentations for healthcare organizations, conferences, and community groups."
+>
+  <div class="fade-in">
+    <!-- Hero with full-width background image -->
+    <div class="relative min-h-[70vh] flex items-center justify-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://picsum.photos/1920/1080?grayscale&random=speaking" 
+          alt="Speaking engagement" 
+          class="w-full h-full object-cover grayscale"
+        />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center px-6">
+        <span class="block text-stone-600 tracking-[0.2em] text-xs uppercase mb-6">Keynotes & Workshops</span>
+        <h1 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Educating with heart and authority.</h1>
+        <Button href="#booking-form">Book Mary to Speak</Button>
+      </div>
+    </div>
+
+    <!-- Two-column section: For Professionals & Recent Engagements -->
+    <Section>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <h2 class="font-serif text-3xl text-stone-900 mb-6">For Professionals & Communities</h2>
+          <div class="space-y-6 font-light text-stone-600 leading-relaxed">
+            <p>
+              Mary Donnelly delivers powerful, evidence-based presentations that change how audiences perceive dementia. Her approach combines clinical expertise with deep compassion, giving healthcare professionals and family caregivers practical tools they can use immediately.
+            </p>
+            <p>
+              Whether speaking to a room of 20 or an audience of 500, Mary creates an atmosphere of learning, reflection, and hope. Her presentations are known for being both professionally rigorous and deeply moving.
+            </p>
+          </div>
+        </div>
+        <div class="bg-stone-100 p-8 md:p-10">
+          <h3 class="font-serif text-2xl text-stone-900 mb-6">Recent Engagements</h3>
+          <ul class="space-y-4 font-light text-stone-600">
+            <li class="flex justify-between border-b border-stone-200 pb-3">
+              <span>National Council on Aging Conference</span>
+              <span class="text-stone-400">2023</span>
+            </li>
+            <li class="flex justify-between border-b border-stone-200 pb-3">
+              <span>Alzheimer's Association Regional Summit</span>
+              <span class="text-stone-400">2023</span>
+            </li>
+            <li class="flex justify-between border-b border-stone-200 pb-3">
+              <span>NC Healthcare Association</span>
+              <span class="text-stone-400">2022</span>
+            </li>
+            <li class="flex justify-between border-b border-stone-200 pb-3">
+              <span>MemoryCare Annual Symposium</span>
+              <span class="text-stone-400">2022</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Dementia Friendly WNC Conference</span>
+              <span class="text-stone-400">2022</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Audience types -->
+    <Section className="bg-stone-50">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <img 
+            src="https://picsum.photos/700/600?grayscale&random=audience" 
+            alt="Mary Donnelly Speaking" 
+            class="w-full h-full object-cover grayscale"
+          />
+        </div>
+        <div>
+          <h2 class="font-serif text-3xl text-stone-900 mb-6">Who I Work With</h2>
+          <div class="space-y-6 font-light text-stone-600 leading-relaxed">
+            <p>
+              I provide keynotes and workshop presentations for a wide range of organizations and venues:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-brand mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Healthcare Facilities:</strong> Hospitals, nursing homes, assisted living communities</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-brand mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Churches & Faith Communities:</strong> Educational sessions for congregations supporting members with dementia</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-brand mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Senior Centers & Retirement Communities:</strong> Presentations for residents and staff</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-brand mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Professional Conferences:</strong> Regional and national healthcare conferences</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-brand mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Caregiver Support Groups:</strong> Educational programs for family caregivers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Presentation Formats -->
+    <Section>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-serif text-4xl text-stone-900 mb-12 text-center">Presentation Formats</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="text-center p-8 border border-stone-200">
+            <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-stone-900 mb-3">Keynote Speech</h3>
+            <p class="font-light text-stone-600">45-90 minute presentations for conferences and large audiences</p>
+          </div>
+
+          <div class="text-center p-8 border border-stone-200">
+            <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-stone-900 mb-3">Workshop</h3>
+            <p class="font-light text-stone-600">2-4 hour in-depth educational sessions with Q&A</p>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Topics CTA -->
+    <Section className="bg-stone-50">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-serif text-4xl text-stone-900 mb-6">Explore Speaking Topics</h2>
+        <p class="font-light text-stone-600 text-lg mb-10 leading-relaxed">
+          From communication strategies to understanding behaviors, I offer presentations on a wide range of dementia-related topics. Each presentation is tailored to your audience and organizational needs.
+        </p>
+        <Button href="/speaking/topics" variant="outline">View All Topics</Button>
+      </div>
+    </Section>
+
+    <!-- Booking Form -->
+    <Section id="booking-form">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-4xl text-stone-900 mb-4">Book Mary to Speak</h2>
+          <p class="font-light text-stone-600 text-lg">
+            Tell me about your event and I'll get back to you within 24 hours.
+          </p>
+        </div>
+        <ContactForm client:load type="speaking" />
+      </div>
+    </Section>
+  </div>
+</BaseLayout>

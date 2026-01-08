@@ -1,0 +1,217 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { name: 'About', href: '/about' },
+  { name: 'Consulting', href: '/consulting' },
+  { name: 'Speaking', href: '/speaking' },
+  { name: 'Book', href: '/book' },
+  { name: 'Testimonials', href: '/testimonials' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Contact', href: '/contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200">
+  <div class="container mx-auto px-6">
+    <nav class="h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="font-serif text-2xl text-stone-900 hover:text-brand transition-colors">
+        Mary Donnelly
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden lg:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`text-xs uppercase tracking-widest font-medium transition-colors ${
+                currentPath === item.href
+                  ? 'text-brand'
+                  : 'text-stone-600 hover:text-brand'
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+      
+      <!-- Mobile Menu Button (always visible, toggles menu) -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2 text-stone-600 hover:text-brand transition-colors"
+        aria-label="Toggle menu"
+      >
+        <!-- Hamburger icon (shown when menu closed) -->
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- X icon (shown when menu open) -->
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay (blurred backdrop - click to close) -->
+<div 
+  id="mobile-menu-overlay" 
+  class="lg:hidden fixed inset-0 z-[140]"
+  style="display: none; background-color: rgba(0,0,0,0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);"
+></div>
+
+<!-- Mobile Menu Panel (slides in from right with solid white background) -->
+<div 
+  id="mobile-menu" 
+  class="mobile-panel lg:hidden fixed top-0 right-0 h-full z-[150] w-72 bg-white shadow-2xl flex flex-col"
+  style="display: none;"
+>
+  <!-- Menu Header -->
+  <div class="flex items-center justify-between px-6 h-20 border-b border-stone-200 bg-white flex-shrink-0">
+    <span class="text-xs uppercase tracking-widest font-medium text-stone-500">Menu</span>
+    <button id="mobile-menu-close" class="p-2 text-stone-600 hover:text-brand transition-colors" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Menu Items -->
+  <nav class="flex-1 overflow-y-auto bg-white">
+    <ul class="px-6 py-4">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={`block py-4 text-sm uppercase tracking-widest font-medium border-b border-stone-100 transition-colors ${
+              currentPath === item.href
+                ? 'text-brand'
+                : 'text-stone-700 hover:text-brand'
+            }`}
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  
+  <!-- Menu Footer -->
+  <div class="px-6 py-6 bg-stone-50 border-t border-stone-200 flex-shrink-0">
+    <p class="text-xs text-stone-400 text-center">
+      Dementia Consultant & Educator
+    </p>
+  </div>
+</div>
+
+<!-- Add padding to body to account for fixed header -->
+<div class="h-20"></div>
+
+<style>
+  .mobile-panel {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .mobile-panel.is-open {
+    transform: translateX(0);
+  }
+  
+  #mobile-menu-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  #mobile-menu-overlay.is-open {
+    opacity: 1;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const closeButton = document.getElementById('mobile-menu-close');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    
+    let isMenuOpen = false;
+    
+    function openMenu() {
+      if (mobileMenu && menuOverlay) {
+        isMenuOpen = true;
+        // Show elements
+        mobileMenu.style.display = 'flex';
+        menuOverlay.style.display = 'block';
+        // Force reflow
+        mobileMenu.offsetHeight;
+        // Add animation class
+        mobileMenu.classList.add('is-open');
+        menuOverlay.classList.add('is-open');
+        // Switch icons
+        if (iconOpen) iconOpen.classList.add('hidden');
+        if (iconClose) iconClose.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeMenu() {
+      if (mobileMenu && menuOverlay) {
+        isMenuOpen = false;
+        // Remove animation class
+        mobileMenu.classList.remove('is-open');
+        menuOverlay.classList.remove('is-open');
+        // Switch icons back
+        if (iconOpen) iconOpen.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+        document.body.style.overflow = '';
+        // Hide after animation
+        setTimeout(function() {
+          mobileMenu.style.display = 'none';
+          menuOverlay.style.display = 'none';
+        }, 300);
+      }
+    }
+    
+    function toggleMenu() {
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+    
+    // Toggle menu on hamburger button click
+    if (menuButton) {
+      menuButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
+      });
+    }
+    
+    // Close menu on X button click
+    if (closeButton) {
+      closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
+    
+    // Close menu when clicking overlay (anywhere outside)
+    if (menuOverlay) {
+      menuOverlay.addEventListener('click', closeMenu);
+    }
+    
+    // Close menu when clicking a link
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+  });
+</script>
