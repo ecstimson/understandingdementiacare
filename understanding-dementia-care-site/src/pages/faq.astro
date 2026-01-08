@@ -33,15 +33,24 @@ const faqSchema = faqs.length > 0 ? {
   description="Common questions about dementia consulting services, speaking engagements, and caregiver support from Mary Donnelly."
 >
   <div class="fade-in">
-    <Section className="pb-0">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="block text-stone-500 tracking-[0.2em] text-xs uppercase mb-6">FAQ</span>
+    <!-- Hero with full-width background image -->
+    <div class="relative min-h-[45vh] flex items-center justify-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://picsum.photos/1920/1080?grayscale&random=faq" 
+          alt="Frequently asked questions" 
+          class="w-full h-full object-cover grayscale"
+        />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center px-6">
+        <span class="block text-stone-600 tracking-[0.2em] text-xs uppercase mb-6">FAQ</span>
         <h1 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Frequently Asked Questions</h1>
-        <p class="font-light text-stone-600 text-xl leading-relaxed mb-10">
+        <p class="font-light text-stone-600 text-xl leading-relaxed">
           Find answers to common questions about my services and approach to dementia care.
         </p>
       </div>
-    </Section>
+    </div>
 
     <Section>
       <div class="max-w-3xl mx-auto">

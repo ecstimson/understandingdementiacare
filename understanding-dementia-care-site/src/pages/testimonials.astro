@@ -22,7 +22,7 @@ const testimonials = await safeFetch<Testimonial>(`
   description="Read testimonials from families and organizations who have worked with Mary Donnelly for dementia consulting, education, and caregiver support."
 >
   <div class="fade-in">
-    <Section className="pb-0">
+    <Section className="pt-16 pb-8">
       <div class="max-w-3xl mx-auto text-center">
         <span class="block text-stone-500 tracking-[0.2em] text-xs uppercase mb-6">Testimonials</span>
         <h1 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Stories of transformation and hope.</h1>
@@ -37,73 +37,78 @@ const testimonials = await safeFetch<Testimonial>(`
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           {testimonials.map((testimonial) => (
             <div key={testimonial._id} class="flex flex-col">
-              <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
+              <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
                 "{testimonial.quote}"
               </blockquote>
-              <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-                — {testimonial.name}
-                {testimonial.role && <span class="block mt-1 text-xs normal-case tracking-normal">{testimonial.role}</span>}
-              </cite>
             </div>
           ))}
         </div>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "Mary transformed our fear into understanding. She gave us the tools to connect with our father again."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "Mary Donnelly is an exceptional speaker and a highly valued resource for MemoryCare's caregiver education initiatives. Her engaging style, energy and delivery are superb. She has excellent knowledge to share, as well as compassion and insight for families who are facing dementia. She will inform, inspire and impact your life!"
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — The Richardson Family
-            </cite>
           </div>
 
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "Her presentation to our staff was incredible. The communication strategies she shared have made a real difference in how we interact with our residents."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "The class Mary offered at our church, Living Next Door to Dementia, was wonderful! Mary possesses great empathy, compassion and a depth of life experience with people who are living with cognitive impairment and memory loss and their family members, loved ones and care givers who are companions with them on this journey towards the end of life. Mary ably created and held the space for our congregation to honestly and empathetically engage this challenging and nuanced yet pertinent issue. Her wisdom, adept facilitation skills, playfulness and humor enabled us to delve deeply and honestly in learning and sharing on this topic and, in so doing, to discover mutual support, inspiration and hope."
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — Sarah M.
-              <span class="block mt-1 text-xs normal-case tracking-normal">Director of Nursing, Senior Living Community</span>
-            </cite>
           </div>
 
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "I've attended many dementia trainings, but Mary's approach is different. She combines clinical knowledge with genuine compassion in a way that really resonates."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "The folks here learned so much. Your energy, speaking/presenting skills plus knowledge and firsthand experience combine into one incredible workshop."
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — Jennifer L.
-              <span class="block mt-1 text-xs normal-case tracking-normal">Family Caregiver</span>
-            </cite>
           </div>
 
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "Mary helped us understand that difficult behaviors weren't personal. She taught us to see things from my mother's perspective, and everything changed."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "You are so good at helping caregivers. You helped keep us half-sane and, more importantly, made it possible for us to work with my sister in ways that made her transition easier."
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — David and Linda C.
-            </cite>
           </div>
 
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "The strategies Mary shared in her workshop have become standard practice at our facility. Our staff feel more confident, and our residents are calmer."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "Those of us with the usual academic credentials who work (or in my case worked) with elder folks have much to learn from your eloquence and understanding. You have the gift of being a superb communicator, and that is vital to improving how our society faces dementia."
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — Michael R.
-              <span class="block mt-1 text-xs normal-case tracking-normal">Administrator, Memory Care Unit</span>
-            </cite>
           </div>
 
           <div class="flex flex-col">
-            <blockquote class="font-serif text-2xl text-stone-800 leading-snug mb-6 flex-grow">
-              "Mary doesn't just teach techniques—she helps you understand the 'why' behind them. That understanding has made all the difference for our family."
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "I've attended Mary's workshops, listened to her presentations and participated in her support groups. She is pure gold. Her knowledge of dementia is wide and deep. It's what she does. It's all she does. Her teaching and communication skills are excellent. In dealing with caregivers, she is empathetic and supportive (she listens long and well), but her focus is on action – helping people cope. Her help is specific and practical. When caregivers come up against a behavior that is baffling and crazy-making (why are they doing that?), Mary explains why. And offers half a dozen specific ways to deal with it."
             </blockquote>
-            <cite class="block text-sm uppercase tracking-widest text-stone-500 not-italic">
-              — Patricia W.
-            </cite>
+          </div>
+
+          <div class="flex flex-col">
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "I wanted to let you know how much I appreciate this program! the presenter is phenomenal. She is so knowledgeable, experienced, insightful and compassionate. She really understands dementia! Everything she says is so informative and helpful. Thank you so much for doing this program. It's exactly what I need in order to know how to cope with family members who are showing these signs of dementia."
+            </blockquote>
+          </div>
+
+          <div class="flex flex-col">
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "Mary has a true gift and the knowledge to back it up."
+            </blockquote>
+          </div>
+
+          <div class="flex flex-col">
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "I want to add my thanks and admiration for … her ability to hold an audience's attention for five (+) hours. None of us really want to know about dementia. We would rather that it just disappeared. But we MUST pay attention. And pay attention we did. I spent a short seven years working with aging folks in an Assisted Living … During that time I attended occasional workshops on dementia and I really thought I had little more to learn. What a surprise. I not only learned — a lot — I actually enjoyed it."
+            </blockquote>
+          </div>
+
+          <div class="flex flex-col">
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "What an insightful, informative, helpful, pratical and most professional talk you gave this am … This info is so rich. One needs to hear it more often."
+            </blockquote>
+          </div>
+
+          <div class="flex flex-col">
+            <blockquote class="font-serif text-2xl text-stone-800 leading-snug">
+              "You have a gift for making learning about dementia a truly enjoyable experience."
+            </blockquote>
           </div>
         </div>
       )}

@@ -23,15 +23,24 @@ const topics = await safeFetch<SpeakingTopic>(`
   description="Explore Mary Donnelly's speaking topics on dementia care, communication strategies, caregiver support, and person-centered care approaches."
 >
   <div class="fade-in">
-    <Section className="pb-0">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="block text-stone-500 tracking-[0.2em] text-xs uppercase mb-6">Speaking Topics</span>
-        <h1 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Presentations that inspire and empower.</h1>
-        <p class="font-light text-stone-600 text-xl leading-relaxed mb-10">
-          Each presentation can be customized to meet your organization's specific needs and audience.
+    <!-- Hero with full-width background image -->
+    <div class="relative min-h-[45vh] flex items-center justify-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://picsum.photos/1920/1080?grayscale&random=topics" 
+          alt="Speaking topics" 
+          class="w-full h-full object-cover grayscale"
+        />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center px-6">
+        <span class="block text-stone-600 tracking-[0.2em] text-xs uppercase mb-6">Signature Talks</span>
+        <h1 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Curated Topics</h1>
+        <p class="font-light text-stone-600 text-xl leading-relaxed">
+          Presentations designed for churches, retirement communities, healthcare facilities, and other organizations supporting families affected by dementia.
         </p>
       </div>
-    </Section>
+    </div>
 
     <Section>
       {topics.length > 0 ? (
@@ -71,22 +80,16 @@ const topics = await safeFetch<SpeakingTopic>(`
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card>
             <div>
-              <h3 class="font-serif text-2xl text-stone-800 mb-4">Understanding Dementia: Beyond the Basics</h3>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Building a Bridge Over Troubled Waters – Staying Connected to Your Loved One with Dementia</h3>
               <p class="font-light text-stone-600 mb-6 leading-relaxed">
-                A comprehensive overview of dementia types, progression, and how brain changes affect behavior and cognition. Perfect for families and professional caregivers seeking foundational knowledge.
+                Strategies to maintain emotional connection despite cognitive decline, focusing on the relationship rather than the task of caregiving.
               </p>
               <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  60-90 minutes
-                </p>
-                <p class="flex items-center">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  Healthcare Professionals & Family Caregivers
+                  Churches & Communities
                 </p>
               </div>
             </div>
@@ -94,17 +97,62 @@ const topics = await safeFetch<SpeakingTopic>(`
 
           <Card>
             <div>
-              <h3 class="font-serif text-2xl text-stone-800 mb-4">Communication Strategies That Work</h3>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Understanding Dementia and Brain Change – a Caregiver's Guide</h3>
               <p class="font-light text-stone-600 mb-6 leading-relaxed">
-                Learn practical techniques for connecting with individuals living with dementia. Includes body language, tone, word choice, and validation strategies.
+                A fundamental overview of how dementia affects the brain and what it means for caregiving, moving beyond memory loss to understanding behavioral changes.
               </p>
               <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  90 minutes - 2 hours
+                  Churches & Communities
                 </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">"He's Just Not the Man I Married!" – Understanding Dementia and Brain Change</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Dementia is more than just memory loss. Changes in language, thinking, and personality are more difficult to understand. Learn how brain change affects your loved one's behavior, and what you can do to make life easier for both of you.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Churches & Communities
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Understanding Changes Everything! Improving Dementia Care for Everyone</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Explore how understanding the person behind the diagnosis transforms care approaches and improves outcomes for everyone involved in the care journey.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Professional Caregivers
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Say This, Not That! – Learning How to Communicate with Dementia</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Dementia is more than just memory loss – it changes how a person thinks and communicates. To stay connected, you have to change too. Understanding how brain change affects your loved one will help you learn what to say and, more importantly, what not to say.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -117,17 +165,119 @@ const topics = await safeFetch<SpeakingTopic>(`
 
           <Card>
             <div>
-              <h3 class="font-serif text-2xl text-stone-800 mb-4">Managing Challenging Behaviors</h3>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Caring for the Alzheimer's Caregiver</h3>
               <p class="font-light text-stone-600 mb-6 leading-relaxed">
-                Explore the root causes of behaviors like aggression, wandering, and resistance. Learn to respond with compassion rather than correction.
+                Address caregiver burnout, emotional resilience, and the unique challenges of supporting those who care for individuals with dementia.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Professional Caregivers
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Doing the Wrong Things for the Right Reasons – Maybe There's a Better Way?</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Examine common caregiving approaches that, despite good intentions, may not serve the person with dementia. Learn evidence-based alternatives that truly help.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  All Caregivers
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Could This Be Alzheimer's? Recognizing Early Warning Signs of Memory Loss</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Learn to distinguish between normal aging and concerning signs of cognitive decline. Understand when to seek evaluation and what to expect from the diagnostic process.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Churches & Communities
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">FAQs about Dementia</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Get answers to the most common questions about dementia, from diagnosis and progression to practical caregiving strategies and available resources.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Churches & Communities
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Learning to Dance with Dementia – How Changing Your Approach Changes the Outcome</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Discover how flexibility and person-centered approaches create positive interactions. Learn to adapt your caregiving style to meet changing needs.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  All Caregivers
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Living Next Door to Dementia</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Whether you call it dementia, or Alzheimer's, or memory loss, the result is the same: it's a disease that changes everything. With our growing aging population, and without a cure anywhere on the horizon, we are called to learn all we can about a condition that will likely affect at least 50% of us. Join us for this interactive program to explore the differences between normal and not normal aging, how to recognize common early signs of dementia, and what you can do to support families in your community who are already affected by this condition.
               </p>
               <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  2-3 hours
+                  Minimum 4 hours
                 </p>
+                <p class="flex items-center">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Churches & Communities
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Less Talk, More Smiles – Adopting a Positive Approach to Dementia in Long-Term Care</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Transform your facility's culture with practical strategies for person-centered care that prioritize connection over correction and understanding over instruction.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -140,22 +290,33 @@ const topics = await safeFetch<SpeakingTopic>(`
 
           <Card>
             <div>
-              <h3 class="font-serif text-2xl text-stone-800 mb-4">Self-Care for the Caregiver</h3>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">What Part of "No!" Don't You Understand?</h3>
               <p class="font-light text-stone-600 mb-6 leading-relaxed">
-                Address caregiver burnout, guilt, and the importance of boundaries. Learn sustainable practices for long-term caregiving.
+                Explore the reasons behind resistance and refusal in dementia care. Learn strategies to work with, rather than against, these challenging moments.
               </p>
               <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  60 minutes
+                  Professional Caregivers
                 </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <h3 class="font-serif text-2xl text-stone-800 mb-4">Diamonds to Pearls – Using Teepa's GEMS to Identify the Progression of Dementia</h3>
+              <p class="font-light text-stone-600 mb-6 leading-relaxed">
+                Learn Teepa Snow's GEMS framework for understanding dementia progression and how to adapt care approaches as abilities change throughout the journey.
+              </p>
+              <div class="space-y-2 text-sm text-stone-500">
                 <p class="flex items-center">
                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  Family & Professional Caregivers
+                  Professional Caregivers
                 </p>
               </div>
             </div>
