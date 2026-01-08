@@ -11,14 +11,36 @@ import Button from '../components/Button.astro';
   <div class="fade-in">
     <Section>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <!-- Book Cover -->
+        <!-- Book Cover Carousel -->
         <div>
-          <div class="bg-stone-200 shadow-2xl">
+          <div class="bg-stone-200 shadow-2xl relative overflow-hidden">
+            <!-- Front Cover -->
             <img 
-              src="/61Qqml6TvpL.jpg" 
-              alt="The MemoryCaregivers Collection Book Cover" 
-              class="w-full h-full object-cover"
+              id="book-front"
+              src="/71bR669l2VL._SL1499_.jpg" 
+              alt="The MemoryCaregivers Collection - Front Cover" 
+              class="w-full h-full object-cover book-image"
             />
+            <!-- Back Cover -->
+            <img 
+              id="book-back"
+              src="/61Qqml6TvpL.jpg" 
+              alt="The MemoryCaregivers Collection - Back Cover" 
+              class="w-full h-full object-cover book-image hidden"
+            />
+          </div>
+          <!-- Carousel Dots -->
+          <div class="flex justify-center gap-2 mt-6">
+            <button 
+              class="carousel-dot w-3 h-3 rounded-full bg-brand transition-opacity" 
+              data-slide="0"
+              aria-label="View front cover"
+            ></button>
+            <button 
+              class="carousel-dot w-3 h-3 rounded-full bg-stone-300 transition-opacity" 
+              data-slide="1"
+              aria-label="View back cover"
+            ></button>
           </div>
         </div>
 
@@ -159,6 +181,37 @@ import Button from '../components/Button.astro';
     </Section>
   </div>
 </BaseLayout>
+
+<!-- Book Cover Carousel Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const frontCover = document.getElementById('book-front');
+    const backCover = document.getElementById('book-back');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        if (index === 0) {
+          // Show front cover
+          frontCover?.classList.remove('hidden');
+          backCover?.classList.add('hidden');
+          dots[0]?.classList.remove('bg-stone-300');
+          dots[0]?.classList.add('bg-brand');
+          dots[1]?.classList.remove('bg-brand');
+          dots[1]?.classList.add('bg-stone-300');
+        } else {
+          // Show back cover
+          frontCover?.classList.add('hidden');
+          backCover?.classList.remove('hidden');
+          dots[0]?.classList.remove('bg-brand');
+          dots[0]?.classList.add('bg-stone-300');
+          dots[1]?.classList.remove('bg-stone-300');
+          dots[1]?.classList.add('bg-brand');
+        }
+      });
+    });
+  });
+</script>
 
 <!-- Book Schema Markup -->
 <script type="application/ld+json">
